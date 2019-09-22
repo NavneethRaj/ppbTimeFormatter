@@ -44,6 +44,7 @@ To Run in IDE :
 
 NOTE :
 port and other config can be changed in applciation.properties file
+version of JAVA can be changed in pom.xml, I am using 12 for this project
 
 SAMPLE JUNIT OUTPUT :
 
