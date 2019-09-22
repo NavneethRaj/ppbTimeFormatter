@@ -96,6 +96,3 @@ SAMPLE JUNIT OUTPUT :
 |FOO            |INVALID                    |INVALID                    |
 
 |[TH] 9:59.412  |INVALID                    |INVALID                    |
-
-
-WEB-INTERFACE :
