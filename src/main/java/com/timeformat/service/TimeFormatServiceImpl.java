@@ -29,7 +29,7 @@ public class TimeFormatServiceImpl {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 	@Autowired
-	NinetyMinuteMatchTFConversion ninetyMinuteMatchTFConversion;
+	private NinetyMinuteMatchTFConversion ninetyMinuteMatchTFConversion;
 
 	@RequestMapping(value = "/matchtimeformatter", method = RequestMethod.POST)
     public ResponseEntity<TFResponse> timeFormatter(@RequestBody TFRequestImpl tfRequestImpl) {

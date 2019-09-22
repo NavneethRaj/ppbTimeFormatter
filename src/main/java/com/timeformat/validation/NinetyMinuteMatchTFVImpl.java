@@ -28,7 +28,7 @@ public class NinetyMinuteMatchTFVImpl implements TimeFormatValidate {
 	private final String pattern = "^\\s*(\\[[PMH12FT]{2}\\]) ([0-9]{1,3}):(([0-5]{1}[0-9]{1}).([0-9]{3}))";
 
 	@Autowired
-	NinetyMinuteMatchTimeFormat ninetyMinuteMatchTimeFormat;
+	private NinetyMinuteMatchTimeFormat ninetyMinuteMatchTimeFormat;
 
 	@Override
 	public NinetyMinuteMatchTimeFormat timeFormatCheck(String inputTime) {

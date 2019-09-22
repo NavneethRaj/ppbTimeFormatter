@@ -28,13 +28,13 @@ public class NinetyMinuteMatchTimeValidationTest {
 	@Test
 	public void matchTimeValid() {
 		NinetyMinuteMatchTimeFormat ninetyMinuteMatchTimeFormat = new NinetyMinuteMatchTimeFormat("PRE_MATCH", 0, 12);
-		assertEquals("PRE_MATCH should be \"[PM] 00:00.000\"",ninetyMinuteMatchTimeValidation.matchTimeValid(ninetyMinuteMatchTimeFormat));
+		assertEquals("PRE_MATCH should be \'[PM] 00:00.000\'",ninetyMinuteMatchTimeValidation.matchTimeValid(ninetyMinuteMatchTimeFormat));
 		
 		ninetyMinuteMatchTimeFormat = new NinetyMinuteMatchTimeFormat("HALF_TIME", 45, 12);
-		assertEquals("HALF_TIME should be \"[HT] 45:00.000\"", ninetyMinuteMatchTimeValidation.matchTimeValid(ninetyMinuteMatchTimeFormat));
+		assertEquals("HALF_TIME should be \'[HT] 45:00.000\'", ninetyMinuteMatchTimeValidation.matchTimeValid(ninetyMinuteMatchTimeFormat));
 	
 		ninetyMinuteMatchTimeFormat = new NinetyMinuteMatchTimeFormat("FULL_TIME", 90, 12);
-		assertEquals("FULL_TIME should be \"[FT] 90:00.000\"", ninetyMinuteMatchTimeValidation.matchTimeValid(ninetyMinuteMatchTimeFormat));
+		assertEquals("FULL_TIME should be \'[FT] 90:00.000\'", ninetyMinuteMatchTimeValidation.matchTimeValid(ninetyMinuteMatchTimeFormat));
 	}
 
 }

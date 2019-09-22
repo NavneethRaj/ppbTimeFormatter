@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>MatchTimeFormatter</title>
 </head>
 <body>
-	<div>
-		<h3>Enter Your Input Time Format:</h3>
-		<input type="text" name="inputTimeFormat"/>
-		<button>Submit</button>
-	</div>
+	<form action="#" th:action="@{/matchTimeConvert}"
+		th:object="${tfRequestImpl}" method="post">
+		<h1>Enter The Time You Want To Convert</h1>
+		<input type="text" th:field="*{inputTF}" />
+		<button type="submit">Submit</button>
+	</form>
+	<p>
+		Formatted Time : <span th:text="${outputTF}"></span>
+	</p>
+	<p>
+		Status : <span th:text="${status}"></span>
+	</p>
+	<p>
+		Message : <span th:text="${message}"></span>
+	</p>
 </body>
 </html>

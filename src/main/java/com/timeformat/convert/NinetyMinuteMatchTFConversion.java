@@ -33,19 +33,19 @@ public class NinetyMinuteMatchTFConversion {
 	private final String EDGECASE = "EDGECASE";
 
 	@Autowired
-	TimeFormatValidate timeFormatValidate;
+	private TimeFormatValidate timeFormatValidate;
 
 	@Autowired
-	NinetyMinuteMatchTimeFormat ninetyMinuteMatchTimeFormat;
+	private NinetyMinuteMatchTimeFormat ninetyMinuteMatchTimeFormat;
 
 	@Autowired
-	NinetyMinuteMatchTimeValidation ninetyMinuteMatchTimeValidation;
+	private NinetyMinuteMatchTimeValidation ninetyMinuteMatchTimeValidation;
 	
 	@Autowired
-	NinetyMinuteMatchTFDecorator ninetyMinuteMatchTFDecorator;
+	private NinetyMinuteMatchTFDecorator ninetyMinuteMatchTFDecorator;
 
 	@Autowired
-	TFResponse tfResponse;	
+	private TFResponse tfResponse;	
 
 	public TFResponse convertTimeFormat(String inputTime) {
 		logger.info("Entering convertTimeFormat method...");
