@@ -94,11 +94,13 @@ public class NinetyMinuteMatchTFConversion {
 		case "SECOND_HALF":
 			calculateTime(ninetyMinuteMatchTimeFormat.getMatchMinutes(), ninetyMinuteMatchTimeFormat.getMatchSeconds(), FULLTIME);
 			break;
+		// Other time slots does not need any changes since all checks are done pre-hand	
 		default:
 		}
 	}
 	
 	private void calculateTime(int minutes, int seconds, int duration) {
+		// Check if extraTime
 		isExtraTime = (minutes >= duration);
 		boolean isIncrementTime = calculateSeconds(seconds, isExtraTime);
 		calculateMinutes(minutes, duration, isExtraTime, isIncrementTime);
@@ -107,6 +109,7 @@ public class NinetyMinuteMatchTFConversion {
 	private void calculateMinutes(int minutes, int duration, boolean isExtraTime, boolean isIncrementTime) {
 		logger.info("Entering calculateMinutes() Method...");
 		if (isExtraTime) {
+			// If extra time, then add the seconds to extratime slot and keep regular time constant 
 			ninetyMinuteMatchTimeFormat.setMatchMinutes(duration);
 			ninetyMinuteMatchTimeFormat.setExtraMinutes(isIncrementTime ? ((minutes + 1) - duration) : (minutes - duration));
 		}else {
@@ -116,8 +119,10 @@ public class NinetyMinuteMatchTFConversion {
 
 	private boolean calculateSeconds(int seconds, boolean isExtraTime) {
 		logger.info("Entering calculateSeconds() Method...");
+		// Check if the seconds is 60, to add +1 to minutes
 		boolean isSecondsFull = (seconds == SECONDS);
 		if(isExtraTime) {
+			// If extra time, then add the seconds to extratime slot and keep regular time constant 
 			ninetyMinuteMatchTimeFormat.setMatchSeconds(0);
 			ninetyMinuteMatchTimeFormat.setExtraSeconds(isSecondsFull ? 0 : seconds);	
 		}else {
